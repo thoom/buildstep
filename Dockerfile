@@ -1,4 +1,4 @@
-FROM ubuntu:quantal
+FROM phusion/baseimage:0.9.9
 MAINTAINER progrium "progrium@gmail.com"
 
 RUN mkdir /build
