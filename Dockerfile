@@ -8,5 +8,5 @@ RUN rm -rf /var/lib/apt/lists/*
 RUN apt-get clean
 
 ## Install an SSH key
-ADD build_key.pub /tmp/build_key.pub
-RUN cat /tmp/build_key.pub >> /root/.ssh/authorized_keys && rm -f /tmp/build_key.pub
+ADD docker_key.pub /tmp/docker_key.pub
+RUN cat /tmp/docker_key.pub >> /root/.ssh/authorized_keys && rm -f /tmp/docker_key.pub
