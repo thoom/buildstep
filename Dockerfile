@@ -1,5 +1,5 @@
 FROM phusion/baseimage:0.9.9
-MAINTAINER progrium "zdp@thoomtech.com"
+MAINTAINER thoom "zdp@thoomtech.com"
 
 RUN mkdir /build
 ADD ./stack/ /build
