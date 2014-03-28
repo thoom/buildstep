@@ -31,12 +31,12 @@ libxslt-dev
 mercurial
 mysql-client
 netcat-openbsd
+nginx-full
 nodejs
 openjdk-6-jdk
 openjdk-6-jre-headless
 openssh-client
 openssh-server
-php5-dev
 postgresql
 postgresql-server-dev-9.1
 python-dev
