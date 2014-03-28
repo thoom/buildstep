@@ -10,3 +10,6 @@ RUN apt-get clean
 ## Install an SSH key
 ADD docker_key.pub /tmp/docker_key.pub
 RUN cat /tmp/docker_key.pub >> /root/.ssh/authorized_keys && rm -f /tmp/docker_key.pub
+
+## Update the nginx conf
+ADD nginx.conf /etc/nginx/nginx.conf
