@@ -7,6 +7,15 @@
 # SYSTEM PACKAGES
 #
 apt-get update
+
+# Get version of mysql library needed for HHVM
+apt-get install -y --force-yes wget
+wget -P /tmp http://security.ubuntu.com/ubuntu/pool/main/m/mysql-5.1/mysql-common_5.1.69-0ubuntu0.11.10.1_all.deb
+wget -P /tmp http://security.ubuntu.com/ubuntu/pool/main/m/mysql-5.1/libmysqlclient16_5.1.69-0ubuntu0.11.10.1_amd64.deb
+dpkg -i /tmp/mysql-common_5.1.69-0ubuntu0.11.10.1_all.deb
+dpkg -i /tmp/libmysqlclient16_5.1.69-0ubuntu0.11.10.1_amd64.deb
+rm -f /tmp/*.deb
+
 xargs apt-get install -y --force-yes < /build/packages.txt
 apt-get clean
 
