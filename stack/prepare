@@ -14,7 +14,6 @@ wget -P /tmp http://security.ubuntu.com/ubuntu/pool/main/m/mysql-5.1/mysql-commo
 wget -P /tmp http://security.ubuntu.com/ubuntu/pool/main/m/mysql-5.1/libmysqlclient16_5.1.69-0ubuntu0.11.10.1_amd64.deb
 dpkg -i /tmp/mysql-common_5.1.69-0ubuntu0.11.10.1_all.deb
 dpkg -i /tmp/libmysqlclient16_5.1.69-0ubuntu0.11.10.1_amd64.deb
-rm -f /tmp/*.deb
 
 xargs apt-get install -y --force-yes < /build/packages.txt
 apt-get clean
@@ -29,6 +28,10 @@ xargs -L 1 git clone --depth=1 < /build/buildpacks.txt
 #
 # MISC
 #
+# HHVM buildpack so we don't have to download it every build!
+wget -P /tmp http://dl.hhvm.com/heroku/hhvm-nightly_2014.03.20~lucid.tgz
+mkdir -p /build/hhvm
+tar xzf /tmp/hhvm-nightly_2014.03.20~lucid.tgz -C "/build/hhvm"
 
 # Ruby buildpack system configuration
 update-alternatives --set ruby /usr/bin/ruby1.9.1
